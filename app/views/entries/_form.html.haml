@@ -1,13 +1,9 @@
-= form_for @entry do |f|
-  - if @entry.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@entry.errors.count, "error")} prohibited this entry from being saved:"
-      %ul
-        - @entry.errors.full_messages.each do |msg|
-          %li= msg
-
-  .field
-    = f.label :user_id
-    = f.number_field :user_id
-  .actions
-    = f.submit 'Save'
+.entry-form
+  = form_for @entry do |f|
+    %label What are the 3 things you are happy about today?
+    
+    = f.fields_for :entry_items do |i|
+      .entry-item-field
+        = i.text_field :content
+    .actions
+      = f.submit 'Save'

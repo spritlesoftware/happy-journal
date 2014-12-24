@@ -15,6 +15,10 @@ class EntriesController < ApplicationController
   # GET /entries/new
   def new
     @entry = Entry.new
+
+    3.times do 
+      @entry.entry_items.build
+    end
   end
 
   # GET /entries/1/edit
@@ -69,6 +73,6 @@ class EntriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def entry_params
-      params.require(:entry).permit(:user_id)
+      params.require(:entry).permit(:user_id, entry_items_attributes: [:content, :id])
     end
 end
