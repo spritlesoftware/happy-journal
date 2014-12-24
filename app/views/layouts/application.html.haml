@@ -7,12 +7,13 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    .container.navbar-container
-      .navbar-spacer
-      .navbar
-        %h3 Happy Journal
-        %ul.navbar-links
-          %li= link_to "My Entries", "#"
-          %li= link_to "New Entry", "#"
+    - unless hide_navbar
+      .container.navbar-container
+        .navbar-spacer
+        .navbar
+          %h3 Happy Journal
+          %ul.navbar-links
+            %li= link_to "My Entries", "#"
+            %li= link_to "New Entry", "#"
     .container
       = yield
