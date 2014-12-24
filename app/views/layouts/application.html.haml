@@ -11,7 +11,8 @@
       .container.navbar-container
         .navbar-spacer
         .navbar
-          %h3 Happy Journal
+          %h3
+            = link_to "Happy Journal", root_path
           %ul.navbar-links
             %li= link_to "My Entries", "#"
             %li= link_to "New Entry", "#"
