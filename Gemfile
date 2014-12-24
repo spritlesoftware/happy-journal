@@ -39,6 +39,8 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 
+gem 'haml-rails'
+
 group :development do
   gem "spring-commands-rspec"
 end
